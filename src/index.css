@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --color_background: #FFF2F2;
+  --color_background_light: #FFFFFF;
+  
+  --color_primary: #1C2071;
+  --color_secondary: #464A8A;
+  --color_success: #0E7600;
+  --color_danger: #F53535;
+  --color_accent_light: #D9D9D9;
+
+  --font_size_large:1.875rem;
+  --font_size_medium:1.5rem;
+  --font_size_regular:1rem;
+  --font_size_small:0.875rem;
+  --font_size_nano:0.75rem;
+
+  --font_weight_large: 700;
+  --font_weight_medium: 600;
+
+  --font_family_primary: "Sora","DM Sans", sans-serif;
+
+  --padding_regular: 1rem;
+}
+
+
+
+body
+{
+  background: var(--color_background);
+  font-family: var(--font_family_primary);
+  font-size: var(--font_size_regular);
+}

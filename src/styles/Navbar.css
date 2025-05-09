@@ -1,0 +1,23 @@
+
+.navbarContainer{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color_background_light);
+  padding: 1.5rem 2rem;
+}
+
+.navbarHeader
+{
+  font-weight: var(--font_weight_medium);
+}
+
+
+.navListItems ul li
+{
+    list-style: none;
+    padding: 0.85rem 1.25rem;
+    border: 2px solid red;
+}
