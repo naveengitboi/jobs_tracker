@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
-
+import Dashboard from './pages/Dashboard'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -10,7 +10,7 @@ function App() {
     <div className="windowContainer">
       <Navbar/>
       <div className="mainContainer">
-        <h1>Welcome to the app</h1>
+        <Dashboard/>
       </div>
     </div>
   )

@@ -1,23 +1,54 @@
 
 .navbarContainer{
-  width: 300px;
+  background-color: var(--color_background_light);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  background-color: var(--color_background_light);
-  padding: 1.5rem 2rem;
+  padding: 2rem 1.25rem;
 }
 
 .navbarHeader
 {
-  font-weight: var(--font_weight_medium);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.navbarHeader svg
+{
+  font-size: 1.5rem;
+}
 
 .navListItems ul li
 {
-    list-style: none;
-    padding: 0.85rem 1.25rem;
-    border: 2px solid red;
+  list-style: none;
+  text-align: center;
+  padding: 1.25rem 2.85rem;
+  margin: 0.85rem 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: 0.05px solid var(--color_accent_light);
+  width: 100%;
+}
+
+
+.navProfile
+{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: var(--color_primary);
+  color: var(--color_accent_light);
+  padding: 1.25rem 2.85rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  min-width: calc(var(--w) - 50px);
+}
+
+
+.navProfile svg
+{
+  margin-right: 0.5rem;
 }

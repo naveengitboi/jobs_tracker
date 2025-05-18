@@ -1,6 +1,13 @@
+
 .windowContainer{
-  display: flex;
   height: 100vh;
   width: 100vw;
+  display: grid;
+  grid-template-columns: 350px auto;
+}
+
+.pageContainer
+{
+  padding: 2rem;
 }
 

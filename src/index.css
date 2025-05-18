@@ -12,13 +12,14 @@
   
   --color_primary: #1C2071;
   --color_secondary: #464A8A;
+  --color_secondary_light: #878bc73b;
   --color_success: #0E7600;
   --color_danger: #F53535;
   --color_accent_light: #D9D9D9;
 
-  --font_size_large:1.875rem;
-  --font_size_medium:1.5rem;
-  --font_size_regular:1rem;
+  --font_size_large:2.5rem;
+  --font_size_medium:1.75rem;
+  --font_size_regular:1.05rem;
   --font_size_small:0.875rem;
   --font_size_nano:0.75rem;
 
@@ -28,6 +29,9 @@
   --font_family_primary: "Sora","DM Sans", sans-serif;
 
   --padding_regular: 1rem;
+
+
+  --svg_size: 1.35rem;
 }
 
 
@@ -37,4 +41,48 @@ body
   background: var(--color_background);
   font-family: var(--font_family_primary);
   font-size: var(--font_size_regular);
+  color: var(--color_primary);
 }
+
+.lgTxt{
+  font-size: var(--font_size_large);
+  font-weight: var(--font_weight_large);
+}
+
+.mdTxt{
+  font-size: var(--font_size_medium);
+  font-weight: var(--font_weight_medium);
+}
+.regTxt{
+  font-size: var(--font_size_regular);
+}
+
+.smTxt{
+  font-size: var(--font_size_small);
+}
+.nanoTxt{
+  font-size: var(--font_size_nano);
+}
+
+svg
+{
+  font-size: var(--svg_size);
+  margin-right: 0.5rem;
+}
+
+.button_primary
+{
+  background-color: var(--color_primary);
+  color: var(--color_accent_light);
+  outline: none;
+  border: none;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.85rem;
+  font-family: var(--font_family_primary);
+  font-size: var(--font_size_regular);
+  cursor: pointer;
+}
+
