@@ -1,0 +1,66 @@
+
+
+.profileContainer
+{
+    padding: 2.5rem;
+    border: 2px solid red;
+    margin: 0.85rem 0;
+    border-radius: 0.5rem;
+}
+.profileBar
+{
+    display: flex;
+    align-items: start;
+    line-height: 1.8;
+}
+.profileBar img
+{
+    --w: 180px;
+    width: var(--w);
+    height: var(--w);
+    border-radius: 50%;
+}
+.profileBar .userBasicInfo
+{
+    padding: 0.85rem 2rem;
+}
+.profileBar .userBasicInfo p
+{
+    display: flex;
+    align-items: center;
+}
+
+
+.userDetails
+{
+    padding: 1.5rem 0;
+}
+.contacts
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5;
+}
+.sectionHeading
+{
+    font-size: calc(var(--font_size_regular) + 0.15rem) ;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* skills */
+
+.skills
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.skills p
+{
+    background-color: var(--color_secondary_light);
+    padding: 0.85rem 1.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0.25rem;
+}
