@@ -23,16 +23,29 @@
 {
   list-style: none;
   text-align: center;
-  padding: 1.25rem 2.85rem;
   margin: 0.85rem 0;
   cursor: pointer;
   display: flex;
   justify-content: left;
   align-items: center;
   border-bottom: 0.05px solid var(--color_accent_light);
+}
+.navListItems ul li a, .navProfile a
+{
+  padding: 1.25rem 2.85rem;
+  text-decoration: none;
   width: 100%;
+  color: inherit;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
+.navListItems ul li a.active
+{
+  color: var(--color_secondary);
+  font-weight: 600;
+}
 
 .navProfile
 {
@@ -41,7 +54,6 @@
   align-items: center;
   background-color: var(--color_primary);
   color: var(--color_accent_light);
-  padding: 1.25rem 2.85rem;
   cursor: pointer;
   border-radius: 0.25rem;
   min-width: calc(var(--w) - 50px);

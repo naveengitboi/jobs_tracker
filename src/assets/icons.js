@@ -1,7 +1,7 @@
 import { MdOutlineDashboardCustomize, MdOutlineSettings, MdLogout, MdOutlineLogin,MdOutlineLocationOn, MdAddLink, MdGesture } from "react-icons/md";
 import { GrTemplate, GrAdd} from "react-icons/gr";
 import { FaRegUser ,FaRegPaperPlane , FaAppStore} from "react-icons/fa";
-import { CiEdit , CiLinkedin, CiCircleInfo} from "react-icons/ci";
+import { CiEdit , CiLinkedin, CiCircleInfo, CiFilter,CiSearch,CiCalendar} from "react-icons/ci";
 import { LuGithub, LuLoaderCircle,LuMessageSquareOff} from "react-icons/lu";
 import { TbCircleDottedLetterJ } from "react-icons/tb";
 
@@ -30,6 +30,9 @@ const icons = {
         "rejected": LuMessageSquareOff,
         "accepted":SiHoneybadger
     },
+    'calender':CiCalendar,
+    'filter': CiFilter,
+    'search':CiSearch
     
 };
 

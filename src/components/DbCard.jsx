@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/DbCard.css'
+import '../styles/components/DbCard.css'
 import icons from '../assets/icons'
 function DbCard(props) {
   return (
