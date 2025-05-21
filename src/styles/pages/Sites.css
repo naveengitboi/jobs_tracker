@@ -1,0 +1,117 @@
+.sitesWrapper
+{
+    padding:1.5rem 3vw 0;
+}
+.sitesContainer, .smlBoxWrapper
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+
+.sbox
+{
+    --size: 400px;
+    min-height: var(--size);
+    min-width: var(--size);
+    max-height: var(--size);
+    background: var(--color_secondary_light);
+    border-radius: 0.5rem;
+}
+
+.smlBox
+{
+    border-radius: 0.5rem;
+    --s: 120px;
+    min-width: var(--s);
+    min-height: var(--s);
+    background-color: var(--color_secondary_light);
+}
+
+
+/* site card */
+.siteCardWrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.siteCardWrapper .lgTxt
+{
+    position: absolute;
+    font-size: 12rem;
+    color: var(--color_background_light);
+}
+
+
+/* links frame */
+.linksFrame
+{
+    padding: 2rem;
+    overflow-y: scroll;
+    max-width: 100%;
+}
+
+.linksFrame
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.linkWrapper,.linksFrame .addNewLink
+{
+    position: relative;
+    --size: 100px;
+    height: var(--size);
+    width: var(--size);
+    border: 2px dashed;
+    color: inherit;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color_secondary_light);
+}
+
+.linkWrapper .popUpBubble
+{
+    position: absolute;
+    white-space: nowrap;
+    opacity: 1;
+    background-color: rgb(176, 176, 204);
+    padding:0.25rem;
+    border-radius: 0.15rem;
+    transition: 0.15s ease;
+    scale: 0;
+    width:100%;
+    text-align: center;
+    left:0;
+    top: 0;
+}
+.linkWrapper:hover .popUpBubble
+{
+    opacity: 1;
+    scale: 1;
+    top: -20%;
+}
+
+.linkWrapper a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+.linksFrame .addNewLink
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.linksFrame .addNewLink svg
+{
+    margin: 0;
+}

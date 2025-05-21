@@ -10,5 +10,18 @@
 .pageContainer
 {
   padding: 2rem 5rem;
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow-y: scroll;
 }
 
+.formContainer
+{
+  width:100vw ;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--color_background);
+  padding: 3rem;
+}

@@ -6,6 +6,8 @@ import {Routes, Route} from 'react-router-dom'
 import Applications from './pages/Applications'
 import Profile from './pages/Profile'
 import Template from './pages/Template'
+import AddTemplate from './forms/AddTemplate'
+import Sites from './pages/Sites'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -19,6 +21,8 @@ function App() {
           <Route  path="/applications" element={<Applications/>}/>
           <Route  path="/profile" element={<Profile/>}/>
           <Route  path="/templates" element={<Template/>}/>
+          <Route  path="/sites" element={<Sites/>}/>
+          <Route  path="/settings" element={<AddTemplate/>}/>
         </Routes>
       </div>
     </div>

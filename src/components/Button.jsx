@@ -4,7 +4,7 @@ import icons from '../assets/icons'
 function Button() {
   return (
     <button className='button_primary'>
-        {<icons.add/>} New Application
+        {<icons.general.add/>} New Application
     </button>
   )
 }

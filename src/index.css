@@ -7,8 +7,8 @@
 }
 
 :root{
-  --color_background: #fcf5f5;
-  --color_background_light: #FFFFFF;
+  --color_background: #fff;
+  --color_background_light: rgba(70, 74, 138, 0.1);
   
   --color_primary: #1C2071;
   --color_secondary: #464A8A;
@@ -96,8 +96,57 @@ svg
   width: 100%;
   height: 1px;
   background-color: var(--color_primary);
+  margin: 0.85rem 0;
 }
 .dashedBorder
 {
   border: 2px dashed var(--color_primary);
+}
+
+.effect:hover
+{
+  box-shadow: 4px 4px 0 0 var(--color_primary);
+}
+
+.inputOuterWrapper .smTxt
+{
+  font-weight: 600;
+  padding: 0 0.5rem;
+}
+.inputWrapper
+{
+  border: 2px solid var(--color_primary);
+  border-radius: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  --pd: 0.85rem;
+  margin-top: 0.35rem;
+  width: fit-content;
+}
+
+.inputSvg
+{
+  padding:var(--pd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid var(--color_primary);
+}
+
+.inputSvg svg
+{
+  margin: 0;
+}
+.inputWrapper input
+{
+  --size: 300px;
+  min-width: var(--size);
+  max-width: var(--size);
+  padding:var(--pd);
+  font-family: var(--font_family_primary);
+  font-size: var(--font_size_regular);
+  outline: none;
+  border: none;
+  background-color: transparent;
 }

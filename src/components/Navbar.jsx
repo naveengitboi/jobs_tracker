@@ -9,22 +9,22 @@ const Navbar = () => {
             <div className="navListItems">
                 <div className="navbarHeader ">
                     {/* <img src="" alt="" /> */}
-                    {<icons.jblogo />}
+                    {<icons.nav.jblogo />}
                     <p className="mdTxt">Job Tracker</p>
                 </div>
                 <ul className="regTxt">
-                    <li> <NavLink to={"/"}> {<icons.user />}Dashboard </NavLink></li>
-                    <li><NavLink to={"applications"}>{<icons.application />}Applications</NavLink></li>
-                    <li><NavLink to="templates">{<icons.template />}Templates</NavLink></li>
-                    <li><NavLink to="jobsites">{<icons.jobsites />}Job Sites</NavLink></li>
-                    <li><NavLink to="settings">{<icons.settings />}settings</NavLink></li>
+                    <li> <NavLink to={"/"}> {<icons.nav.user />}Dashboard </NavLink></li>
+                    <li><NavLink to={"applications"}>{<icons.nav.application />}Applications</NavLink></li>
+                    <li><NavLink to="templates">{<icons.nav.template />}Templates</NavLink></li>
+                    <li><NavLink to="sites">{<icons.nav.jobsites />}Sites</NavLink></li>
+                    <li><NavLink to="settings">{<icons.nav.settings />}settings</NavLink></li>
                 </ul>
             </div>
             <div className="navProfile">
                 <NavLink to="profile">
                     <div className="profileImage">
                         {/* <img src="https://via.placeholder.com/150" alt="Profile" /> */}
-                        {<icons.user />}
+                        {<icons.nav.user />}
                     </div>
                 <div className="profileName">John Doe</div>
                 </NavLink>

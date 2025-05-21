@@ -6,7 +6,7 @@ function DbCard(props) {
     <div className='dbCardItem'>
         <p className='regularTxt'>{props.dbcTitle}</p>
         <h1 className='lgTxt'>{props.dbcCount}</h1>
-        {<icons.jblogo/>}
+        {<icons.nav.jblogo/>}
     </div>
   )
 }

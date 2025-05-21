@@ -3,7 +3,7 @@
 .profileContainer
 {
     padding: 2.5rem;
-    border: 2px solid red;
+    border: 2px solid var(--color_secondary);
     margin: 0.85rem 0;
     border-radius: 0.5rem;
 }
@@ -47,6 +47,8 @@
     font-size: calc(var(--font_size_regular) + 0.15rem) ;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
 /* skills */

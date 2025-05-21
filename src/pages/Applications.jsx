@@ -11,9 +11,9 @@ function Applications() {
         <div className=""></div>
         <div className="appActions">
           <div className="appActionsIcon">
-            {<icons.search />}
-            {<icons.filter />}
-            {<icons.calender />}
+            {<icons.general.search />}
+            {<icons.general.filter />}
+            {<icons.general.calender />}
           </div>
         </div>
       </div>
