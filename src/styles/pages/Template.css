@@ -1,0 +1,42 @@
+
+.templateCards
+{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.templateCard
+{
+    border:2px solid var(--color_secondary) ;
+    border-radius: 0.5rem;
+    padding:2rem 3rem;
+}
+
+.templateHeading
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.templateInfo .regTxt
+{
+    font-weight: 500;
+}
+
+.templateLogo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.templateUpdateDetails
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
