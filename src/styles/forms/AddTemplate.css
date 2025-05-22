@@ -1,0 +1,135 @@
+
+.addTemplateWrapper
+{
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 50px;
+    height: 90%;
+    padding: 2rem;
+}
+
+
+.dragAndDropContainer
+{
+    border: 2px solid;
+    background-color: var(--color_background_light);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dadLogoContainer
+{
+    border: 2px dashed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dadLogoContainer svg
+{
+    margin: 0;
+}
+.dragAndDropContainer .mdTxt
+{
+    margin: 1rem 0 0;
+}
+
+.dragAndDropContainer .or
+{
+    margin: 0.85rem 0;
+}
+
+.dragAndDropContainer button
+{
+    margin-bottom: 0.85rem;
+}
+
+.dim
+{
+    padding: 0 6rem;
+    text-align: center;
+    color:var(--color_secondary) ;
+}
+
+.writeTemplateContainer
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.templateHeader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.templateBox
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0.85rem 0;
+    flex-grow: 1;
+}
+
+.templateBox .tbHeader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tbHeader p
+{
+    padding:0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+.inputTextBox
+{
+    height: 100%;
+}
+.inputTextBox textarea
+{
+    width: 100%;
+    height: inherit;
+    font-family: var(--font_family_primary);
+    font-size: var(--regularTxt);
+    padding: 0.5rem;
+    border:2px solid var(--color_primary) ;
+    border-radius: 0.25rem;
+    outline: none;
+    color: var(--color_primary);
+    caret-color: var(--color_primary);
+    cursor: text;
+}
+
+
+.templateActions, .btnGrp
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.templateActions input
+{
+    max-width: 100px ;
+    min-width: 100px ;
+}
+.templateActions .inputLabel
+{
+    display: none;
+}
+
+.btnGrp button:nth-child(1)
+{
+    margin-right:1rem;
+}
