@@ -8,6 +8,7 @@ import Profile from './pages/Profile'
 import Template from './pages/Template'
 import AddTemplate from './forms/AddTemplate'
 import Sites from './pages/Sites'
+import AddApplication from './forms/AddApplication'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -22,7 +23,7 @@ function App() {
           <Route  path="/profile" element={<Profile/>}/>
           <Route  path="/templates" element={<Template/>}/>
           <Route  path="/sites" element={<Sites/>}/>
-          <Route  path="/settings" element={<AddTemplate/>}/>
+          <Route  path="/settings" element={<AddApplication/>}/>
         </Routes>
       </div>
     </div>
