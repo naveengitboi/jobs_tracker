@@ -1,8 +1,10 @@
 import React from 'react'
 
-function DashedBtn() {
+function DashedBtn(props) {
   return (
-    <button className='dashedBtn'>Extra Link</button>
+    <button className='dashedBtn'>
+      {props.label}
+    </button>
   )
 }
 

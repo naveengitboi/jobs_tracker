@@ -6,7 +6,7 @@ import ApplicationData from '../components/ApplicationData'
 function Applications() {
   return (
     <div className='pageContainer'>
-      <PageHeader pageTitle="Applications" />
+      <PageHeader pageTitle="Applications" isBtn={false} actions={{to:'/', svg: icons.general.add, label:'Application'}}  />
       <div className="appHeader">
         <div className=""></div>
         <div className="appActions">

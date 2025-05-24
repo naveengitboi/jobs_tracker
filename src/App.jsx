@@ -23,7 +23,8 @@ function App() {
           <Route  path="/profile" element={<Profile/>}/>
           <Route  path="/templates" element={<Template/>}/>
           <Route  path="/sites" element={<Sites/>}/>
-          <Route  path="/settings" element={<AddApplication/>}/>
+          <Route  path="/new_application" element={<AddApplication/>}/>
+          <Route  path="/new_template" element={<AddTemplate/>}/>
         </Routes>
       </div>
     </div>

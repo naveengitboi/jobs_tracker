@@ -29,7 +29,7 @@ function LinkContainer(linkDetails){
 function Sites() {
   return (
     <div className="pageContainer">
-      <PageHeader pageTitle="Useful Sites" />
+      <PageHeader pageTitle="Useful Sites" isBtn={false} actions={{to:'/', svg: icons.general.calender, label:'Go Home'}}  />
       <div className="sitesWrapper">
         <div className="sitesContainer">
           <div className="sbox effect linksFrame">

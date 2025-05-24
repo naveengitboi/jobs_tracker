@@ -7,7 +7,7 @@ import icons from '../assets/icons'
 function Profile() {
     return (
         <div className='pageContainer'>
-            <PageHeader pageTitle="Profile" />
+            <PageHeader pageTitle="Profile" isBtn={false} actions={{to:'/', svg: icons.general.calender, label:'Go Home'}} />
             <div className="profileContainer">
                 <div className="profileBar">
                     <img src={profile} alt="profile" />

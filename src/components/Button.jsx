@@ -1,10 +1,13 @@
 import React from 'react'
 import icons from '../assets/icons'
 
-function Button() {
+
+function Button(props) {
+  const { styleName="button_primary", containsSvg = false, label="Dummy Btn"} = props
   return (
-    <button className='button_primary'>
-        {<icons.general.add/>} New Application
+    <button className={styleName} onClick={props.clickHandler}>
+        {containsSvg ? <props.actions.svg/> : ""}
+         {label}
     </button>
   )
 }
