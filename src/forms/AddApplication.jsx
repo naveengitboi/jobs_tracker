@@ -41,7 +41,7 @@ function AddApplication() {
                         type:"text",
                         setValue: setApplicationData,
                         applicationState: applicationData,
-                        name:"company"
+                        name:"applied_company"
                     }
                 }/>
                 <InputTxt actions={
@@ -52,7 +52,7 @@ function AddApplication() {
                         type:"text",
                         setValue: setApplicationData,
                         applicationState: applicationData,
-                        name:"role"
+                        name:"applied_role"
                     }
                 }/>
                 <InputTxt actions={
@@ -95,7 +95,6 @@ function AddApplication() {
                         name:"portal"
                     }
                 }/>
-                
                 
                 <InputTxt actions={
                     {

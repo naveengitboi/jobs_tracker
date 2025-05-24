@@ -79,7 +79,7 @@ input
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0.85rem;
   font-family: var(--font_family_primary);
   font-size: var(--font_size_regular);
   cursor: text;

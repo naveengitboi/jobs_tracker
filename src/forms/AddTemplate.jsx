@@ -4,21 +4,46 @@ import InputTxt from '../components/InputTxt'
 import '../styles/forms/AddTemplate.css'
 import icons from '../assets/icons'
 import Button from '../components/Button'
+import useCopyToClipboard from '../hooks/useCopyToClipboard'
+
 function AddTemplate() {
-    const [template, setTemplate] = useState({});
+    const [template, setTemplate] = useState({
+        'template_body':"The quick brown naveen jumps naveen over the lazy naveen."
+    });
+    const [copyToClipboard, isCopied] = useCopyToClipboard();
+    const [replaceWord, setReplaceWord] = useState();
     const addTemplateHandler = () => {
         console.log("Template", template);
     }
-    const textareaHandler = (e) => {
+    const onChangeHandler = (e, updateState) => {
         const {name, value} = e.target;
-        setTemplate(prev => ({
+        updateState(prev => ({
             ...prev,
             [name]:value
         }))
     }
     const replaceHandler = () => {
-        console.log("Replaced");
+        const word = replaceWord.before;
+        const replaceWith = replaceWord["replace_with"];
+        if(word && replaceWith){
+            const regex = new RegExp(word, 'g');
+            const beforeTxt = template["template_body"];
+            const afterTxt = beforeTxt.replace(regex, replaceWith);
+            console.log("After ", afterTxt)
+            setTemplate(prev => ({
+                ...prev,
+                "template_body": afterTxt
+            }))
+            console.log(template);
+        }
     }
+
+    const handleCopyClick = async () => {
+        await copyToClipboard(template["template_body"]);
+    }
+
+
+
 
     return (
         <div className='formContainer'>
@@ -40,19 +65,19 @@ function AddTemplate() {
                             actions={
                                 {
                                     svg: icons.general.role,
-                                    label: 'CTC Mentioned',
-                                    placeholder: "10LPA",
+                                    label: "Role",
+                                    placeholder: "Software Developer",
                                     type: "text",
                                     setValue: setTemplate,
                                     getValue: template,
-                                    name: "salary"
+                                    name: "template_role"
                                 }
                             }
                         />
 
-                        <div className="replacerInputs">
-                            <input type='text' placeholder='replace word'/>
-                            <input type='text' placeholder='with'/>
+                        <div className="replacerInputsWrapper">
+                            <input type='text' placeholder='replace word' name="before" onChange={(e) =>onChangeHandler(e, setReplaceWord)}  />
+                            <input type='text' placeholder='with' name="replace_with" onChange={(e) => onChangeHandler(e, setReplaceWord)} />
                             <Button label="Replace" containsSvg={false} clickHandler={replaceHandler} />
                         </div>
 
@@ -61,12 +86,13 @@ function AddTemplate() {
                     <div className="templateBox">
                         <div className="tbHeader smTxt">
                             <p>Write Template</p>
-                            <p>Copy</p>
+                            <p onClick={handleCopyClick}>{isCopied ? "Copied": "Copy"}</p>
                         </div>
 
                         <div className="inputTextBox">
                             <textarea name="template_body" id="" 
-                                onChange={textareaHandler} 
+                                onChange={(e) => onChangeHandler(e, setTemplate)} 
+                                placeholder='Im an enthusisatic student who wants ......'
                             ></textarea>
                         </div>
                     </div>
@@ -90,7 +116,7 @@ function AddTemplate() {
                             <Button
                                 label="Add"
                                 containsSvg={false}
-                                styleName={"dashedBtn danger"}
+                                styleName={"dashedBtn succeed"}
                                 clickHandler={addTemplateHandler}
                             />
                             <Button
