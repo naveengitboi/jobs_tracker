@@ -9,6 +9,7 @@ import Template from './pages/Template'
 import AddTemplate from './forms/AddTemplate'
 import Sites from './pages/Sites'
 import AddApplication from './forms/AddApplication'
+import EditProfile from './forms/EditProfile'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -25,6 +26,7 @@ function App() {
           <Route  path="/sites" element={<Sites/>}/>
           <Route  path="/new_application" element={<AddApplication/>}/>
           <Route  path="/new_template" element={<AddTemplate/>}/>
+          <Route  path="/edit_profile" element={<EditProfile/>}/>
         </Routes>
       </div>
     </div>

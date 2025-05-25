@@ -18,10 +18,10 @@ function TemplateCard() {
             <p>Last used- 02-05-2025</p>
             <div className="templateLogo">
                 <div>
-                    {<icons.user.location/>} 
+                    {<icons.general.edit/>} 
                 </div>
                 <div>
-                    {<icons.user.location/>} 
+                    {<icons.general.delete/>} 
                 </div>
             </div>
         </div>

@@ -12,6 +12,8 @@ function Template() {
             <TemplateCard/>
             <TemplateCard/>
         </div>
+        <div className="marginLine">
+        </div>
     </div>
   )
 }

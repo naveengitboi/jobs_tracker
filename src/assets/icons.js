@@ -1,4 +1,4 @@
-import { MdOutlineDashboardCustomize, MdOutlineSettings, MdLogout, MdOutlineLogin, MdOutlineLocationOn, MdAddLink, MdGesture, MdOutlineContentCopy, MdOutlinePermPhoneMsg, MdOutlineCloudUpload, MdOutlineLink, MdWorkOutline, MdOutlineEditCalendar, MdOutlineAttachMoney } from "react-icons/md";
+import { MdOutlineDashboardCustomize, MdOutlineSettings, MdLogout, MdOutlineLogin, MdOutlineLocationOn, MdAddLink, MdGesture, MdOutlineContentCopy, MdOutlinePermPhoneMsg, MdOutlineCloudUpload, MdOutlineLink, MdWorkOutline, MdOutlineEditCalendar, MdOutlineAttachMoney, MdOutlineDelete } from "react-icons/md";
 import { GrTemplate, GrAdd } from "react-icons/gr";
 import { FaRegUser, FaRegPaperPlane, FaAppStore } from "react-icons/fa";
 import { CiEdit, CiLinkedin, CiCircleInfo, CiFilter, CiSearch, CiCalendar } from "react-icons/ci";
@@ -53,7 +53,8 @@ const icons = {
         "portal":GiCobweb,
         "jobType": TbClockQuestion,
         "money":MdOutlineAttachMoney,
-        "role":GoCodespaces
+        "role":GoCodespaces,
+        "delete":MdOutlineDelete
     }
 
 
