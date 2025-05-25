@@ -40,7 +40,6 @@ function AddApplication() {
                         placeholder:"Google",
                         type:"text",
                         setValue: setApplicationData,
-                        applicationState: applicationData,
                         name:"applied_company"
                     }
                 }/>
@@ -51,7 +50,6 @@ function AddApplication() {
                         placeholder:"SDE 1",
                         type:"text",
                         setValue: setApplicationData,
-                        applicationState: applicationData,
                         name:"applied_role"
                     }
                 }/>
