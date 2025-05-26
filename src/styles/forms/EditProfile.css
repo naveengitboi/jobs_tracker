@@ -1,0 +1,111 @@
+
+
+.editProfileWrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.epwInner
+{
+    width:800px;
+    border: 2px solid ;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileImg
+{
+    --size: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0.85rem 0;
+}
+
+
+.profileImg img
+{
+    border-radius: 50%;
+    width: var(--size);
+    height: var(--size);
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.epbox
+{
+    width: 100%;
+    display:grid ;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+
+.epAbout, .educationSummary
+{
+    width: 100%;
+    margin: 0.85rem 0;
+    height: 180px;
+}
+.educationSummary
+{
+    grid-area: 4 / 1 / 4 / 3;
+}
+
+
+.graduationDetails
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.graduationDetails .inputWrapper input
+{
+    max-width: 100px;
+    min-width: 100px;
+}
+
+
+.epSkillsList
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+
+.epSkillsList li
+{
+    list-style-type: none;
+    border: 2px solid;
+    border-radius: 0.25rem;
+    position: relative;
+    background-color: var(--color_secondary_light);
+    padding: 0.85rem 1.25rem;
+}
+
+.epSkillsList li .epSkillDelete
+{
+    --size: 30px;
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    background-color: var(--color_secondary_light);
+    color: var(--color_primary);
+    border-radius: 50%;
+    border: 2px solid var(--color_primary);
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

@@ -49,11 +49,10 @@
     margin-bottom: 0.85rem;
 }
 
-.dim
+.dragAndDropContainer .dim
 {
     padding: 0 6rem;
     text-align: center;
-    color:var(--color_secondary) ;
 }
 
 .writeTemplateContainer

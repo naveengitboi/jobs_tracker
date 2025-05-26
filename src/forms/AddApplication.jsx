@@ -5,6 +5,7 @@ import DashedBtn from '../components/DashedBtn'
 import Button from '../components/Button'
 import '../styles/forms/AddApplications.css'
 import icons from '../assets/icons'
+import TextArea from '../components/TextArea'
 
 
 function AddApplication() {
@@ -17,13 +18,6 @@ function AddApplication() {
         console.log("Application Data", applicationData);
     }
 
-    const textareaHandler = (e) => {
-        const {name, value} = e.target
-        setApplicationData(prev => ({
-                ...prev,
-                [name]:  value
-            }))
-    }
 
   return (
     <div className="formContainer">
@@ -121,7 +115,12 @@ function AddApplication() {
                 
                 </div>
                 <div className="addAppTextareaWrapper">
-                    <textarea  id="" placeholder="Job Description" name="job_description" onChange={(e) => textareaHandler(e)}></textarea>
+                    <TextArea  id=""
+                    actions={{
+                        placeholder:"Job Description",
+                        setValue: setApplicationData,
+                        name:"job_description",
+                    }} />
                 </div>
 
                 <div className="templateActions">
