@@ -1,5 +1,5 @@
 import React from 'react'
-import AppDetailsCard from '../components/AppDetailsCard';
+import AppDetailsCard from './AppDetailsCard';
 
 function ApplicationData() {
   return (
