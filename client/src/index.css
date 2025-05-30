@@ -31,6 +31,7 @@
   --font_family_primary: "Sora","DM Sans", sans-serif;
 
   --padding_regular: 1rem;
+  --sides_padding : 15vw;
 
   --svg_size: 1.35rem;
 }

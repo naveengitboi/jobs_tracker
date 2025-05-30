@@ -64,3 +64,55 @@
 {
   margin-right: 0.5rem;
 }
+
+
+/* home page */
+
+.headerHpNavbarWrapper
+{
+  flex-direction: row;
+  padding: 0.5rem var(--sides_padding);
+}
+.headerHpNavListItems .navbarHeader
+{
+  margin-right: 2rem;
+}
+.headerHpNavListItems, .headerHpNavListItems ul
+{
+  display: flex;
+}
+
+.headerHpNavListItems ul li
+{
+  border-bottom: none;
+  margin: 0;
+}
+
+.headerHpNavListItems ul li a, .headerHpActions a
+{
+  padding:0;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.25rem;
+}
+
+
+.headerHpActions
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.headerHpActions a:nth-child(1){
+  border: 2px solid;
+}
+
+.headerHpActions a:nth-child(2){
+  background-color: var(--color_primary);
+  color: var(--color_background);
+  border: 2px solid var(--color_primary);
+}
