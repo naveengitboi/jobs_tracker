@@ -159,6 +159,10 @@ function EditProfile() {
                   Javascript
                   <div className="epSkillDelete regTxt">X</div>
                 </li>
+                <li>
+                  Javascript
+                  <div className="epSkillDelete regTxt">X</div>
+                </li>
               </ul>
           </div>
 

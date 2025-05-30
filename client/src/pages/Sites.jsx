@@ -3,28 +3,9 @@ import PageHeader from '../components/PageHeader'
 import '../styles/pages/Sites.css'
 import SiteCard from '../components/SiteCard'
 import icons from '../assets/icons'
+import { NavLink, Outlet } from 'react-router-dom'
+import { job_sites, useful_tools } from '../utils/data'
 
-function getShortWord(sentence){
-    const words = sentence.split(' ');
-    let output="";
-    if(words.length >= 2){
-        for(let i = 0; i<2;i++){
-            output += words[i][0];
-        }
-    }else{
-        output = words[0][0]+words[0][1];
-    }
-    return output;
-}
-
-function LinkContainer(linkDetails){
-  return(
-    <div className="linkWrapper">
-      <p className="popUpBubble nanoTxt">Full Name</p>
-      <a href="#" className='lgTxt'>{getShortWord('Full Name')}</a>
-    </div>
-  )
-}
 
 function Sites() {
   return (
@@ -32,37 +13,28 @@ function Sites() {
       <PageHeader pageTitle="Useful Sites" isBtn={false} actions={{to:'/', svg: icons.general.calender, label:'Go Home'}}  />
       <div className="sitesWrapper">
         <div className="sitesContainer">
-          <div className="sbox effect linksFrame">
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <LinkContainer/>
-              <span className="addNewLink">{<icons.general.add/>}</span>
+          <Outlet/>
+          <div className="smlBoxWrapper">
+            {
+              job_sites.map((site,idx) => {
+                return(
+                <NavLink key={idx} to={site.category.toLowerCase()} className="effect smlBox siteCardWrapper">
+                  <SiteCard  cardTitle={site.category}/>
+                </NavLink>
+                )
+              })
+            }
           </div>
           <div className="smlBoxWrapper">
-
-            <div className="effect smlBox siteCardWrapper">
-              <SiteCard getShortWord={getShortWord} cardTitle="Courses"/>
-            </div>
-            <div className="effect smlBox siteCardWrapper"></div>
-            <div className="effect smlBox siteCardWrapper"></div>
-            <div className="effect smlBox siteCardWrapper"></div>
-          </div>
-          <div className="smlBoxWrapper">
-
-            <div className="effect smlBox"></div>
-            <div className="effect smlBox"></div>
-            <div className="effect smlBox"></div>
-            <div className="effect smlBox"></div>
+            {
+              useful_tools.map((site,idx) => {
+                return(
+                <NavLink key={idx} to={site.category.toLowerCase()} className="effect smlBox siteCardWrapper">
+                  <SiteCard  cardTitle={site.category}/>
+                </NavLink>
+                )
+              })
+            }
           </div>
           <div className="sbox effect b"></div>
 

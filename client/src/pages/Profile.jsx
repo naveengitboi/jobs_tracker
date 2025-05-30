@@ -7,7 +7,7 @@ import icons from '../assets/icons'
 function Profile() {
     return (
         <div className='pageContainer'>
-            <PageHeader pageTitle="Profile" isBtn={false} actions={{to:'/edit_profile', svg: icons.general.edit, label:'Edit Profile'}} />
+            <PageHeader pageTitle="Profile" isBtn={false} actions={{to:'/profile/edit_profile', svg: icons.general.edit, label:'Edit Profile'}} />
             <div className="profileContainer">
                 <div className="profileBar">
                     <img src={profile} alt="profile" />
