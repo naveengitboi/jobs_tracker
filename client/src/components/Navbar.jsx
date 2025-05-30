@@ -13,7 +13,7 @@ const Navbar = () => {
                     <p className="mdTxt">Job Tracker</p>
                 </div>
                 <ul className="regTxt">
-                    <li> <NavLink to={"/"}> {<icons.nav.user />}Dashboard </NavLink></li>
+                    <li> <NavLink to={"/dashboard"}> {<icons.nav.user />}Dashboard </NavLink></li>
                     <li><NavLink to={"applications"}>{<icons.nav.application />}Applications</NavLink></li>
                     <li><NavLink to="templates">{<icons.nav.template />}Templates</NavLink></li>
                     <li><NavLink to="sites">{<icons.nav.jobsites />}Sites</NavLink></li>
