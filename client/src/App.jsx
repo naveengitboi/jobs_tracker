@@ -13,9 +13,10 @@ import EditProfile from './forms/EditProfile'
 import SitesDisplay from './components/SitesDisplay'
 import ProtectedRoute from './components/ProtectedRoute'
 import HeaderHP from './homepage/components/HeaderHP'
+import HomeLayout from './homepage/pages/HomeLayout'
 function App() {
   const [count, setCount] = useState(0)
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
     <div className={isLoggedIn ? "windowContainer" : "homePageWindowContainer"}>
@@ -25,9 +26,9 @@ function App() {
       <div className={isLoggedIn ? "mainContainer" : "homePageMainContainer"}>
         <Routes>
           {
-            !isLoggedIn ? (<Route path="/homepage" element={<Dashboard/>} /> ): (
+            !isLoggedIn ? (<Route path="/" element={<HomeLayout/>} /> ): (
               <Route path="/" element={<ProtectedRoute />}>
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route index element={<Dashboard />} />
                 <Route path="/applications" element={<Applications />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/templates" element={<Template />} />

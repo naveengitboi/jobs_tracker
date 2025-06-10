@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Badeen+Display&family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap');
 *{
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,13 +23,15 @@
   --font_size_large:2rem;
   --font_size_medium:1.75rem;
   --font_size_regular:1.05rem;
-  --font_size_small:0.8rem;
+  --font_size_small:0.9rem;
   --font_size_nano:0.75rem;
+  --home_main_text_size: 6vh;
 
   --font_weight_large: 700;
   --font_weight_medium: 600;
 
   --font_family_primary: "Sora","DM Sans", sans-serif;
+  --font_family_secondary: "Space Grotesk", sans-serif;;
 
   --padding_regular: 1rem;
   --sides_padding : 15vw;
@@ -64,6 +67,12 @@ body
 }
 .nanoTxt{
   font-size: var(--font_size_nano);
+}
+.homeMainTxt
+{
+  font-size: var(--home_main_text_size); 
+  font-family:var(--font_family_secondary) ;
+  font-style: normal;
 }
 
 svg

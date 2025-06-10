@@ -1,0 +1,40 @@
+
+
+.pageCenterWrapper, .ctaContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.pageCenterWrapper
+{
+    padding: 20vh 0;
+}
+
+
+.pageCenterWrapper .homeMainTxt
+{
+    text-transform: lowercase;
+    color: var(--color_secondary);
+}
+.pageCenterWrapper .homeMainTxt span
+{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 8vh;
+    line-height: 1;
+    color: var(--color_primary);
+}
+
+.ctaContainer
+{
+    padding: 1.5rem 0;
+}
+
+.ctaContainer .smTxt
+{
+    margin: 0.8rem 0;
+}

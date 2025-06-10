@@ -71,7 +71,9 @@
 .headerHpNavbarWrapper
 {
   flex-direction: row;
-  padding: 0.5rem var(--sides_padding);
+  padding: 1.25rem var(--sides_padding);
+  border-bottom: 1px solid;
+  background-color: transparent;
 }
 .headerHpNavListItems .navbarHeader
 {
@@ -108,7 +110,7 @@
 }
 
 .headerHpActions a:nth-child(1){
-  border: 2px solid;
+  border: 2px solid transparent;
 }
 
 .headerHpActions a:nth-child(2){

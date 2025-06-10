@@ -1,11 +1,8 @@
-
-
 .profileContainer
 {
     padding: 2.5rem;
-    border: 2px solid var(--color_secondary);
+    border: 2px solid var(--color_secondary_light);
     margin: 0.85rem 0;
-    border-radius: 0.5rem;
 }
 .profileBar
 {
@@ -33,14 +30,36 @@
 
 .userDetails
 {
-    padding: 1.5rem 0;
+    padding:1.5rem 0;
 }
 .contacts
 {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     line-height: 1.5;
+}
+.contacts .linksContainer{
+    padding: 0 10rem;
+}
+
+.contacts .linksContainer .anchors
+{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    height: 100px;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.contacts .linksContainer .anchors a
+{
+    text-decoration: none;
+}
+
+.contacts .linksContainer .anchors a:hover
+{
+    cursor: pointer;
+    text-decoration: underline;
 }
 .sectionHeading
 {
@@ -58,6 +77,8 @@
     display: flex;
     justify-content: left;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem ;
 }
 .skills p
 {
@@ -65,4 +86,30 @@
     padding: 0.85rem 1.5rem;
     margin-right: 0.5rem;
     border-radius: 0.25rem;
+}
+
+/* education container */
+
+.edInnerContainer
+{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px ;
+}
+
+.edInnerContainer .udBox .smTxt
+{
+    font-weight: bold;
+    color: var(--color_secondary);
+    margin: 1rem 0 0.35rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.edInnerContainer .edHeader
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.25rem 0;
+    font-weight: 600;
 }
