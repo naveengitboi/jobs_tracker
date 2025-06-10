@@ -1,3 +1,5 @@
+import { getFullDate } from "./helper";
+
 export const job_sites = [
     {
         category: "Jobs",
@@ -218,21 +220,42 @@ export const templates = [
         content: "This is the content in it",
         updated: new Date(),
         get_date: function (){
-            let day = this.updated.getDate();
-            let month = this.updated.getMonth();
-            let year = this.updated.getFullYear();
-            let date = "";
-            [day, month, year].map((ele, i) => {
-                if(ele < 10){
-                    ele = "0"+String(ele);
-                }
-                date += String(ele);
-                if(i < 2){
-                    date += "-";
-                }
-            });
-            return date;
+            return getFullDate(this.updated)
         }
     }
 
+]
+
+
+export const applications = [
+    {
+        company: "Google",
+        role: "SDE 2",
+        ctc_mentioned: "10LPA",
+        job_type: "Full Time",
+        job_location: "Banglore",
+        job_portal: "Linked In",
+        job_link: "www.google.com",
+        applied_date: new Date(), 
+        job_description: "This is JD",
+        status: "Shortlisted" ,
+        get_applied_date: function(){
+            return getFullDate(this.applied_date)
+        }
+    }, 
+    {
+        company: "Microsoft",
+        role: "SDE 3",
+        ctc_mentioned: "20LPA",
+        job_type: "Full Time",
+        job_location: "Banglore",
+        job_portal: "Linked In",
+        job_link: "www.google.com",
+        applied_date: new Date(), 
+        job_description: "This is JD",
+        status: "Round 2" ,
+        get_applied_date: function(){
+            return getFullDate(this.applied_date)
+        }
+    }
 ]
