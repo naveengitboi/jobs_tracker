@@ -137,6 +137,9 @@ input
   box-shadow: 4px 4px 0 0 var(--color_primary);
 }
 
+
+/* Input Wrapper */
+
 .inputOuterWrapper .smTxt
 {
   font-weight: 600;
@@ -173,10 +176,6 @@ input
   min-width: var(--size);
   max-width: var(--size);
   padding:var(--pd);
-  font-family: var(--font_family_primary);
-  font-size: var(--font_size_regular);
-  outline: none;
-  border: none;
   color: var(--color_primary);
   background-color: transparent;
 }

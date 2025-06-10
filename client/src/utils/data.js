@@ -187,3 +187,52 @@ export const user = {
 }
 
 
+export const templates = [
+    {
+        template_id: 1,
+        title: "Software Engineer",
+        type: "Resume", 
+        content: "This is the content in it",
+        updated: new Date(),
+        get_date: function (){
+            let day = this.updated.getDate();
+            let month = this.updated.getMonth();
+            let year = this.updated.getFullYear();
+            let date = "";
+            [day, month, year].map((ele, i) => {
+                if(ele < 10){
+                    ele = "0"+String(ele);
+                }
+                date += String(ele);
+                if(i < 2){
+                    date += "-";
+                }
+            });
+            return date;
+        }
+    },
+    {
+        template_id: 2,
+        title: "Sde 2",
+        type: "cover", 
+        content: "This is the content in it",
+        updated: new Date(),
+        get_date: function (){
+            let day = this.updated.getDate();
+            let month = this.updated.getMonth();
+            let year = this.updated.getFullYear();
+            let date = "";
+            [day, month, year].map((ele, i) => {
+                if(ele < 10){
+                    ele = "0"+String(ele);
+                }
+                date += String(ele);
+                if(i < 2){
+                    date += "-";
+                }
+            });
+            return date;
+        }
+    }
+
+]

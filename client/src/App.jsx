@@ -14,6 +14,8 @@ import SitesDisplay from './components/SitesDisplay'
 import ProtectedRoute from './components/ProtectedRoute'
 import HeaderHP from './homepage/components/HeaderHP'
 import HomeLayout from './homepage/pages/HomeLayout'
+import TemplateViewer from './pages/TemplateViewer'
+
 function App() {
   const [count, setCount] = useState(0)
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -31,7 +33,8 @@ function App() {
                 <Route index element={<Dashboard />} />
                 <Route path="/applications" element={<Applications />} />
                 <Route path="/profile" element={<Profile />} />
-                <Route path="/templates" element={<Template />} />
+                <Route path="/templates" element={<Template />}></Route>
+                <Route index path="/templates/:id" element={<TemplateViewer/>} />
                 <Route path="/sites" element={<Sites />}>
                   <Route index path=":category?" element={<SitesDisplay />} />
                 </Route>

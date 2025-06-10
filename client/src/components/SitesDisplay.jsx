@@ -27,7 +27,7 @@ function SitesDisplay() {
                         )
                     })
             }
-            <span className="addNewLink">{<icons.general.add />}</span>
+            <span className="addNewLink">{<icons.general.add/>}</span>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { GrTemplate, GrAdd } from "react-icons/gr";
 import { FaRegUser, FaRegPaperPlane, FaAppStore } from "react-icons/fa";
 import { CiEdit, CiLinkedin, CiCircleInfo, CiFilter, CiSearch, CiCalendar } from "react-icons/ci";
 import { LuGithub, LuLoaderCircle, LuMessageSquareOff, LuGraduationCap } from "react-icons/lu";
-import { TbCircleDottedLetterJ, TbTemplate,TbArrowBackUp, TbClockQuestion } from "react-icons/tb";
+import { TbCircleDottedLetterJ, TbTemplate,TbArrowBackUp, TbClockQuestion ,TbCopy,TbCopyCheckFilled } from "react-icons/tb";
 import { RiUserSmileLine } from "react-icons/ri";
 import { GoCodespaces, GoLinkExternal } from "react-icons/go";
 import { SiConcourse, SiHoneybadger } from "react-icons/si";
@@ -43,7 +43,8 @@ const icons = {
         'calender': MdOutlineEditCalendar,
         'filter': CiFilter,
         'search': CiSearch,
-        'copy': MdOutlineContentCopy,
+        'copy': TbCopy ,
+        "copied": TbCopyCheckFilled,
         "info": CiCircleInfo,
         "add": GrAdd,
         "upload":MdOutlineCloudUpload,
