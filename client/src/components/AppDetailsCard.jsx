@@ -1,11 +1,17 @@
 import React from 'react'
 
-function AppDetailsCard() {
-  return (
+function AppDetailsCard({ card }) {
+  return !card.isLink ? (
+
     <div className='appDetailsCard dashedBorder'>
-        <p className='smTxt'>Job Type</p>
-        <p className='lgTxt'>Full Time Role</p>
+      <p className='smTxt'>{card.heading}</p>
+      <p className='lgTxt'>{card.content}</p>
     </div>
+  ) : (
+    <a href={card.url} target='_blank' className='appDetailsCard dashedBorder linkAppDetailsCard'>
+      <p className='smTxt'>{card.heading}</p>
+      <p className='lgTxt'>{card.content}</p>
+    </a>
   )
 }
 

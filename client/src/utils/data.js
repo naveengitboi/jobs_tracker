@@ -229,6 +229,7 @@ export const templates = [
 
 export const applications = [
     {
+        application_id :1,
         company: "Google",
         role: "SDE 2",
         ctc_mentioned: "10LPA",
@@ -239,11 +240,16 @@ export const applications = [
         applied_date: new Date(), 
         job_description: "This is JD",
         status: "Shortlisted" ,
+        more_urls: [
+        ],
         get_applied_date: function(){
             return getFullDate(this.applied_date)
         }
+        
     }, 
     {
+        application_id :2,
+        company: "Google",
         company: "Microsoft",
         role: "SDE 3",
         ctc_mentioned: "20LPA",
@@ -254,6 +260,16 @@ export const applications = [
         applied_date: new Date(), 
         job_description: "This is JD",
         status: "Round 2" ,
+        more_urls: [
+            {
+                url_name: "Cocain",
+                url: "google.com"
+            },
+            {
+                url_name: "Assigment",
+                url: "https://www.google.com"
+            }
+        ],
         get_applied_date: function(){
             return getFullDate(this.applied_date)
         }

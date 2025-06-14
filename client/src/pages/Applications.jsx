@@ -6,23 +6,24 @@ import ApplicationData from '../components/ApplicationData'
 import { applications } from '../utils/data'
 
 
-function ApplicationListItem({application}) {
+function ApplicationListItem({ application }) {
   const [viewDetails, setViewDetials] = useState(false);
   return (
     <div className="atRowOuter">
-    <div className="atRow atJobRow" onClick={() => setViewDetials(prev => prev=!prev)}>
+      <div className="atRow atJobRow" onClick={() => setViewDetials(prev => prev = !prev)}>
 
-      <p className='atCell regularTxt'>{application.company}</p>
-      <p className='atCell regularTxt'>{application.role}</p>
-      <p className='atCell regularTxt'>{application.job_type}</p>
-      <p className='atCell regularTxt'>{application.ctc_mentioned}</p>
-      <p className='atCell regularTxt'>{application.status}</p>
-      <a href={application.job_link} target='_blank' className='atCell regularTxt'>View Application</a>
-    </div>
+        <p className='atCell regularTxt'>{application.company}</p>
+        <p className='atCell regularTxt'>{application.role}</p>
+        <p className='atCell regularTxt'>{application.job_type}</p>
+        <p className='atCell regularTxt'>{application.ctc_mentioned}</p>
+        <p className='atCell regularTxt'>{application.status}</p>
+        <a href={application.job_link} target='_blank' className='atCell regularTxt'>View Application</a>
+      </div>
 
       <div className={`applicationDetails ${viewDetails && "openAnimate"}`}>
-        <ApplicationData />
+        <ApplicationData  application={application}/>
       </div>
+      {/* <div className="marginLine"></div> */}
 
     </div>
   )
@@ -57,7 +58,7 @@ function Applications() {
         {
           applications.map((application, idx) => {
             return (
-              <ApplicationListItem application={application}/>
+              <ApplicationListItem application={application} />
             )
           })
         }

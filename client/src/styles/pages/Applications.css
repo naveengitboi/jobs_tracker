@@ -55,7 +55,7 @@
     padding: 1rem;
     translate: 0 100%;
     transition-property: display opacity;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     transition-behavior: allow-discrete;
 }
 .openAnimate
@@ -77,9 +77,9 @@
 
 .adCardsHeader
 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
     padding: 0.5rem 2rem;
     text-align: center;
 }
@@ -91,6 +91,13 @@
     padding: 1rem 2rem 1.5rem;
     border-radius: 0.85rem;
     background-color: var(--color_secondary_light);
+}
+
+.linkAppDetailsCard
+{
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .appDetailsCard .smTxt
@@ -108,11 +115,14 @@
     padding: 2rem 0;
 }
 
-.adLinks, .rightLinks
+.adLinks, .rightLinks, .leftLinks
 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.leftLinks .dashedBtn{
+    margin-right: 0.5rem;
 }
 .rightLinks button:nth-child(1)
 {

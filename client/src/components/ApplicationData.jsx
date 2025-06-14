@@ -1,28 +1,68 @@
 import React from 'react'
 import AppDetailsCard from './AppDetailsCard';
 
-function ApplicationData() {
+const cardsData = [
+  {
+    heading:"Job Type",
+    isLink: false,
+    content: "FTE"
+  },
+  {
+    heading:"Job Type",
+    isLink: false,
+    content: "Yet to be"
+  },
+  {
+    heading:"Job Type",
+    isLink: true,
+    url: "https://google.com",
+    content: "Linked In"
+  },
+  {
+    heading:"Application Date",
+    isLink: false,
+    url: "https://google.com",
+    content: "22-12-2025"
+  },
+
+]
+
+function ApplicationData({application}) {
+  const deleteHandler = () => {
+
+  }
   return (
     <>
       <div className="adCardsHeader">
-        <AppDetailsCard />
-        <AppDetailsCard />
-        <AppDetailsCard />
-        <AppDetailsCard />
+        {
+          cardsData.map((card) => {
+            return (
+              <AppDetailsCard card={card} />
+            )
+          })
+        }
       </div>
       <div className='adDescriptionContainer'>
         <div className="adDescription">
           <p className='smTxt'>Description</p>
-          <p className="regularTxt">
-            Create best in class design outputs in line with agency standards. — Create designs such as user interface, design systems, layouts, brand  identity, iconography and assist with presentation narratives. — Create designs such as user interface, design systems, layouts, brand  identity, iconography and assist with presentation narratives.
-          </p>
+          <p className="regularTxt">{application.job_description}</p>
         </div>
 
           <div className="adLinks">
-            <button className='dashedBtn'>Extra Link</button>
-            <div className="rightLinks ">
-              <button className='dashedBtn'>Extra Link</button>
-              <button className='dashedBtn'>Extra Link</button>
+            <div className="leftLinks">
+            {
+              application.more_urls.length > 0? application.more_urls.map((url, idx) => {
+                return (
+                <a href={url.url} target='_blank' className='dashedBtn'>{url.url_name}</a>
+                )
+              }) : (
+                <p className='dim nanoTxt'>No Links</p>
+              )
+            }
+            </div>
+            <div className="rightLinks">
+              <button className='dashedBtn succeed'>Update</button>
+              <button className='dashedBtn danger' onClick={deleteHandler}>Delete</button>
             </div>
           </div>
       </div>
