@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
+const urlSchema = new mongoose.Schema({
 
-const resourceSchema = new mongoose.Schema({
     resource_name: {
         type:String,
         required:[true, "Name Required"]
@@ -10,15 +10,21 @@ const resourceSchema = new mongoose.Schema({
         type:String,
         required:[true, "Without link it is shit!"]
     },
-    category : {
+    times_visited: {
+        type:Number,
+        default: 0
+    },
+    tags: [String],
+})
+
+const resourceSchema = new mongoose.Schema({
+    resource_category : {
         type:String,
-        enum: ["job", "tools"],
         required:true
     },
-    tags: [String]
+    urls: [urlSchema],
+    
 },{timestamps:true})
-
-
 
 const resourceModel = new mongoose.model("Resources", resourceSchema);
 

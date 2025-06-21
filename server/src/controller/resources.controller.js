@@ -4,6 +4,7 @@ import asyncErrorHandler from "../utils/asyncErrorHandler.js";
 import { respondAsJson } from "../utils/helper.js";
 
 
+
 const getResources = asyncErrorHandler(async (req,res, next) => {
     const resourcesList = await resourceModel.find(req.query).sort({resource_name:1});
     respondAsJson({res, output: resourcesList});
@@ -11,7 +12,10 @@ const getResources = asyncErrorHandler(async (req,res, next) => {
 
 
 const addResource = asyncErrorHandler(async (req, res, next) => {
+    const {resource_category} = req.query;
     const resourceData = req.body;
+    const data = await resourceModel.find(req.query);
+    
     const createResource = await resourceModel.create(resourceData);
     respondAsJson({res, output:"Added resource"})
 })
@@ -33,4 +37,21 @@ const deleteResource = asyncErrorHandler(async (req, res, next) => {
 
 
 
-export {getResources, addResource, updateResource, deleteResource};
+//most visited sites
+
+const visitResource = asyncErrorHandler(async (req, res, next) => {
+    const {resource_id} = req.params;
+    const updatedResource = await resourceModel.findOneAndUpdate({_id:resource_id}, {$inc: {"times_visited":1}}, {new:true});
+    respondAsJson({res, output:updatedResource});
+})
+
+
+const mostVisited = asyncErrorHandler(async (req, res, next) => {
+    let n = 3;
+    const topNvisited = await resourceModel.find().sort({times_visited:-1}).limit(n);
+    respondAsJson({res, output:topNvisited});
+
+})
+
+
+export {getResources, addResource, updateResource, deleteResource, visitResource, mostVisited};

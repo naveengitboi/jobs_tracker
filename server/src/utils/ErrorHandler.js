@@ -1,4 +1,4 @@
-export class ErrorHandler extends Error{
+export class CustomErrorHandler extends Error{
     constructor(statusCode, msg){
         super(msg);
         this.statusCode = statusCode;

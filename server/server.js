@@ -8,7 +8,7 @@ import mongoose from "mongoose"
 //files imports
 import templateRouter from "./src/routes/template.route.js"
 import { generateToken, verifyToken } from "./src/middlewares/auth.js";
-import { ErrorHandler } from "./src/utils/ErrorHandler.js"
+import { CustomErrorHandler } from "./src/utils/ErrorHandler.js"
 import { errorHandler } from "./src/middlewares/globalErrorHandler.js"
 import resourceRouter from "./src/routes/resources.route.js"
 
@@ -36,7 +36,7 @@ app.use("/api/templates", templateRouter)
 app.use("/api/resources", resourceRouter)
 
 app.all("/{*any}", (req,res, next) => {
-  const err = new ErrorHandler(404,"Where you went bro?");
+  const err = new CustomErrorHandler(404,"Where you went bro?");
   next(err);
 })
 
