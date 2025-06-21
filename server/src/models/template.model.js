@@ -3,11 +3,11 @@ import { getFullDate } from "../utils/helper.js";
 
 const templateSchema = new mongoose.Schema({
     title: {
-        require: [true, "Title is required"],
+        required: [true, "Title is requiredd"],
         type: String,
     },
     type: {
-        require: [true, "Choose from the dropdown"],
+        required: [true, "Choose from the dropdown"],
         type: String, 
         enum: {
             values:["cover", "resume", "other"],
@@ -15,27 +15,23 @@ const templateSchema = new mongoose.Schema({
         },
     },
     template: {
-        require: [true, "Template is required"],
+        required: [true, "Template is requiredd"],
         type: String,
-        // validate: {
-        //     validator: function(val){
-        //         return (val).trim.length >= 3
-        //     }, 
-        //     message: "Please add more content"
-        // }
+        validate: {
+            validator: function(val){
+                return (val).trim.length >= 3
+            }, 
+            message: "Please add more content"
+        }
     },
     role: {
         type: String,
-        require: true
+        required: true
     }},
     {
         timestamps: true
     })
 
-
-templateSchema.methods.get_date = function () {
-    return getFullDate(this.updatedAt);
-}
 
 
 const templateModel = new mongoose.model("Template", templateSchema);
