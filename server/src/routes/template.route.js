@@ -3,19 +3,22 @@ import express from "express"
 
 
 //controller imports
-import { getTemplates, addTemplate, deleteTemplate, getIndividualTemplate } from "../controller/template.controller.js";
+import { getTemplates, addTemplate, deleteTemplate, getIndividualTemplate , updateTemplate} from "../controller/template.controller.js";
 
-const router = express.Router()
-
-
-router.get("/", getTemplates);
+const templateRouter = express.Router()
 
 
-router.get("/:template_id", getIndividualTemplate);
-
-router.post("/add", addTemplate);
-
-router.delete("/delete/:temp_id", deleteTemplate);
+templateRouter.route("/")
+    .get(getTemplates)
+    .post(addTemplate);
 
 
-export default router
+
+templateRouter.route("/:template_id")
+    .get(getIndividualTemplate)
+    .patch(updateTemplate)
+    .delete(deleteTemplate)
+
+
+
+export default templateRouter 

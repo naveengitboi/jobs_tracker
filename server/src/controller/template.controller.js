@@ -1,45 +1,46 @@
 import templateModel from "../models/template.model.js"
+import asyncErrorHander from "../utils/asyncErrorHandler.js"
+import { respondAsJson } from "../utils/helper.js";
 
 
-const getLastAddedTemplate = async () => {
-    const data = await templateModel.find().sort({"template_id": -1}).limit(1);
-    console.log(data);
-    return data.template_id;
-}
+const getIndividualTemplate = asyncErrorHander(async (req, res, next)=>{
+    const {template_id} = req.params
+    const data = await templateModel.findOne({_id:template_id}); 
+    if(data){
+        respondAsJson({res, output:data});
+    }else{
+        respondAsJson({res,statusCode:400,success:false, output:"Invalid Template Id"});
+    }
+})
 
-const getIndividualTemplate = async (req, res)=>{
-    const template_id = req.params.template_id
-    const data = await templateModel.find({"template_id": template_id}); 
+const getTemplates = asyncErrorHander(async (req, res, next) => {
+    const data = await templateModel.find(req.query).sort({updatedAt:-1});
+    // console.log(data);
     res.status(200).json({ success: true, output: data}); 
-}
+})
 
-const getTemplates = async (req, res) => {
-    console.log(req.params)
-    console.log(req.query)
-    const data = await templateModel.find(req.query);
-    console.log(data);
-    res.send("Hello Templates")
-}
+const addTemplate = asyncErrorHander(async (req, res, next) => {
+    const data = req.body; 
+    const newTemplate = await templateModel.create(data);
+    respondAsJson({res, output:"Template Added"})
+})
 
-const addTemplate = async (req, res) => {
-    console.log(req.body)
+const deleteTemplate = asyncErrorHander(async (req, res, next) => {
 
-    const lastId = getLastAddedTemplate();
-    const data = req.body;
-    const newTemplate = new templateModel(data);
-    const addedTemp = await newTemplate.save();
-    res.send("Hello add templates here")
-}
+    const {template_id} = req.params;
+    const suc = await templateModel.findOneAndDelete({_id: template_id})
+
+    respondAsJson({res, output:suc})
+})
 
 
-const deleteTemplate = async (req, res) => {
-    console.log(req.params);
-    const template_id = parseInt(req.params.temp_id);
-    console.log(template_id);
-    const suc = await templateModel.findOneAndDelete({"template_id": template_id})
-    console.log(suc);
-    res.send("Deleted");
-}
+const updateTemplate = asyncErrorHander(async (req, res, next) => {
+    const {template_id} = req.params;
+    const contentToUpdate = req.body;
+    console.log("content ", contentToUpdate);
+    const updated = await templateModel.findOneAndUpdate({_id: template_id},contentToUpdate, {new:true, runValidators:true});
+    respondAsJson({res, output:updated})
+})
 
 
-export {getTemplates, addTemplate, deleteTemplate, getIndividualTemplate}
+export {getTemplates, addTemplate, deleteTemplate, getIndividualTemplate, updateTemplate}

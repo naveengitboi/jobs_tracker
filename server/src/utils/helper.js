@@ -1,3 +1,4 @@
+
 export function getFullDate(date) {
     let day = date.getDate();
     let month = date.getMonth();
@@ -13,5 +14,13 @@ export function getFullDate(date) {
         }
     });
     return dateInString;
+}
+
+
+export const respondAsJson = ({res, statusCode=200, success=true, output}) => {
+    return res.status(statusCode).json({
+        success,
+        output
+    })
 }
 
