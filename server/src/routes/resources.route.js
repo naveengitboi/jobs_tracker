@@ -1,20 +1,23 @@
 import express from "express"
 
 //controller imports
-import { getResources, addResource, updateResource, deleteResource, visitResource, mostVisited } from "../controller/resources.controller.js";
+import { getResources, visitResource, mostVisited, deleteAll, addNewUrlExisitingResource, renameResourceCategory} from "../controller/resources.controller.js";
 
 const resourceRouter = express.Router()
 
 
-resourceRouter.route("/")
+resourceRouter.route("/:resource_category_id")
     .get(getResources)
-    .post(addResource);
+    .put(renameResourceCategory)
 
-resourceRouter.route("/:resource_id")
-    .patch(updateResource)
-    .delete(deleteResource)
+resourceRouter.put("/:resource_category_id/urls/:url_id/visit", visitResource);
 
-resourceRouter.put("/visited/:resource_id", visitResource);
-resourceRouter.get("/mostvisited",mostVisited);
+resourceRouter.get("/most_visited",mostVisited);
+
+
+resourceRouter.put("/add_url/:resource_category_id/", addNewUrlExisitingResource);
+
+resourceRouter.put("/rename/:resource_category_id/", renameResourceCategory);
+
 
 export default resourceRouter;
