@@ -163,13 +163,22 @@ input
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.leftSideSvg
+{
   border-right: 2px solid var(--color_primary);
+}
+.rightSideSvg
+{
+  border-left: 2px solid var(--color_primary);
 }
 
 .inputSvg svg
 {
   margin: 0;
 }
+
 .inputWrapper input
 {
   --size: 300px;

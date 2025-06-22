@@ -17,10 +17,10 @@ function HeaderHP() {
                 </ul>
             </div>
             <div className="headerHpActions">
-                <NavLink to="profile" className={""}>
-                    Sign Up
+                <NavLink to="register">
+                    Register 
                 </NavLink>
-                <NavLink to="profile">
+                <NavLink to="login">
                     Log In
                 </NavLink>
             </div>

@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 import { getFullDate } from "../utils/helper.js";
 
 const templateSchema = new mongoose.Schema({
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"User",
+        required:true
+    }, 
     title: {
         required: [true, "Title is requiredd"],
         type: String,

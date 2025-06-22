@@ -29,3 +29,15 @@ export function getFullDate(date) {
     });
     return dateInString;
 }
+
+
+
+
+export const generateOtp = () => {
+    let otp = "";
+    for(let i = 0; i<6; i++){
+        const randInt = Math.floor(Math.random()*9) + 1;
+        otp+=String(randInt);
+    }
+    return otp;
+}

@@ -50,6 +50,9 @@ const deleteExisitingResourceURL = asyncErrorHandler(async (req, res, next) => {
     const deleteResource = await resourceModel.findOneAndDelete({_id:resource_category_id, "urls._id":url_id});
 })
 
+
+
+
 //most visited sites
 
 const visitResource = asyncErrorHandler(async (req, res, next) => {
