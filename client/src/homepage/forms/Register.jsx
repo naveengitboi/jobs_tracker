@@ -7,14 +7,46 @@ import "../../styles/homepage/Register.css"
 
 function Register() {
     const [userData, setUserData] = useState({});
-    const [showPassword, setShowPassword] = useState(false);
 
+    const [userActions, setUserActions] = useState({
+        verifyEmailBtnClick: false,
+        emailVerified: false,
+        showPassword:false
+    })
 
-    const verifyEmailHandler = () => {
-
+    //verify email handler before adding user to db;
+    const verifyEmailBtnClick = () => {
+        setUserActions(prev => (
+            {
+                ...prev,
+                verifyEmailBtnClick:true
+            }
+        ))
     }
+
+    
     const passwordHideShow = () => {
         setShowPassword(prev => !prev);
+    }
+    let dummy = "125406"
+    const otpInputHanlder = (e) => {
+        let txt = String(e.target.value);
+        if(txt == dummy){
+            setUserActions(prev => ({
+                ...prev,
+                emailVerified:true
+            }))
+        }else{
+            setUserActions(prev => ({
+                ...prev,
+                emailVerified:false
+            }))
+        }
+    }
+
+    ///send to backend
+    const registerUserHandler = () => {
+
     }
 
     return (
@@ -45,9 +77,10 @@ function Register() {
                         <Button label="Verify Mail"
                             containsSvg={false}
                             styleName={"dashedBtn"}
-                            clickHandler={verifyEmailHandler} />
-                        {true && (
-                            <input type="text" />
+                            clickHandler={verifyEmailBtnClick} />
+                        {userActions.verifyEmailBtnClick && (
+
+                            <input type="text" className={`${userActions.emailVerified ? "succeed": "danger"}`} onChange={(e) => otpInputHanlder(e)} />
                         )}
                     </div>
                 </div>
@@ -57,8 +90,8 @@ function Register() {
                         {
                             svg: icons.general.work,
                             label: "password",
-                            placeholder: "*****",
-                            type: showPassword ? "text" : "password",
+                            placeholder: "-------",
+                            type: userActions.showPassword ? "text" : "password",
                             setValue: setUserData,
                             name: "password",
                             toRight: true
@@ -66,10 +99,10 @@ function Register() {
                     } svgClickHandler={passwordHideShow} />
                 </div>
 
-                <div className="registerButton">
-                     <Button label="Verify Mail"
+                <div className={userActions.emailVerified ? "registerButton" : "failRegisterButton"}>
+                     <Button label="Register"
                             containsSvg={false}
-                            clickHandler={verifyEmailHandler} />
+                            clickHandler={verifyEmailBtnClick} />
                 </div>
 
 

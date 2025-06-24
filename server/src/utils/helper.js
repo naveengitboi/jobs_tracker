@@ -24,3 +24,8 @@ export const respondAsJson = ({res, statusCode=200, success=true, output}) => {
     })
 }
 
+
+export const getOtp = () => {
+    const otp = Math.floor(100000 + Math.random()*90000);
+    return otp;
+}

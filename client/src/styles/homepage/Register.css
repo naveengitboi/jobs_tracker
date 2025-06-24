@@ -42,9 +42,20 @@
     font-weight: bold;
 }
 
+.userEmail .succeed
+{
+    background-color: var(--color_success_transp);
+}
+
 .passwordContainer
 {
     margin: 1rem 0;
+}
+.failRegisterButton button
+{
+    width: 100%;
+    cursor: not-allowed;
+    background-color: #464a8aaf;
 }
 .registerButton button
 {
