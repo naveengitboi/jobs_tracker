@@ -4,12 +4,12 @@ import { loadTemplate } from "../middlewares/fileReader.js"
 import { getOtp } from "../utils/helper.js"
 
 const transporter = nodemailer.createTransport({
-    host:"smtp.gmail.com",
+    host:process.env.MAIL_HOST,
     secure:true,
     port:465,
     auth:{
-        user:"meghasaikittuau@gmail.com",
-        pass:"jbtthkupnekgdsww"
+        user:process.env.USER_MAIL,
+        pass:process.env.USER_PASS
     }
 })
 
@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
 async function sendMail({to, sub,filePath, reps}){
     const template = loadTemplate(filePath, reps);
     const mailInfo = await transporter.sendMail({
-        from:'"Job Tracker" <meghasaikittuau@gmail.com>',  
+        from: `Job Tracker <${process.env.USER_MAIL}>`,
         to:to,
         subject:sub,
         html:template
