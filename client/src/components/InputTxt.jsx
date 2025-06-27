@@ -13,6 +13,7 @@ function InputTxt(props) {
   }
 
   const handleSvgClick = () => {
+    console.log(props.svgClickHandler);
     if(props.svgClickHandler){
       props.svgClickHandler();
     }else{

@@ -17,6 +17,8 @@ import HomeLayout from './homepage/pages/HomeLayout'
 import TemplateViewer from './pages/TemplateViewer'
 import Register from './homepage/forms/Register'
 import Home from './homepage/pages/Home'
+import Login from './homepage/forms/Login'
+import ForgotPassword from './homepage/forms/ForgotPassword'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,6 +36,8 @@ function App() {
               <Route element={<HomeLayout />}>
                 <Route path="/" element={<Home/>}/>
                 <Route path='/register' element={<Register/>} />
+                <Route path='/login' element={<Login/>} />
+                <Route path='/profile/forgotpassword' element={<ForgotPassword/>} />
               </Route>) :
               (
                 <Route path="/" element={<ProtectedRoute />}>

@@ -1,4 +1,4 @@
-import { MdOutlineDashboardCustomize, MdOutlineSettings, MdLogout, MdOutlineLogin, MdOutlineLocationOn, MdAddLink, MdGesture, MdOutlineContentCopy, MdOutlinePermPhoneMsg, MdOutlineCloudUpload, MdOutlineLink, MdWorkOutline, MdOutlineEditCalendar, MdOutlineAttachMoney, MdOutlineDelete } from "react-icons/md";
+import { MdOutlineDashboardCustomize, MdOutlineSettings, MdLogout, MdOutlineLogin, MdOutlineLocationOn, MdAddLink, MdGesture, MdOutlineContentCopy, MdOutlinePermPhoneMsg, MdOutlineCloudUpload, MdOutlineLink, MdWorkOutline, MdOutlineEditCalendar, MdOutlineAttachMoney, MdOutlineDelete, MdOutlineAttachEmail } from "react-icons/md";
 import { GrTemplate, GrAdd } from "react-icons/gr";
 import { FaRegUser, FaRegPaperPlane, FaAppStore } from "react-icons/fa";
 import { CiEdit, CiLinkedin, CiCircleInfo, CiFilter, CiSearch, CiCalendar } from "react-icons/ci";
@@ -8,6 +8,7 @@ import { RiUserSmileLine } from "react-icons/ri";
 import { GoCodespaces, GoLinkExternal } from "react-icons/go";
 import { SiConcourse, SiHoneybadger } from "react-icons/si";
 import { GiCobweb } from "react-icons/gi";
+import {BsEmojiDizzy, BsEmojiSurprise} from "react-icons/bs"
 const icons = {
     'nav': {
         'jblogo': MdGesture,
@@ -55,7 +56,10 @@ const icons = {
         "jobType": TbClockQuestion,
         "money":MdOutlineAttachMoney,
         "role":GoCodespaces,
-        "delete":MdOutlineDelete
+        "delete":MdOutlineDelete,
+        "eyeClosed": BsEmojiDizzy,
+        "eyeOpened": BsEmojiSurprise,
+        "mail": MdOutlineAttachEmail
     }
 
 

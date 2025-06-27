@@ -1,11 +1,13 @@
+
 import React, { useState } from 'react'
 import InputTxt from '../../components/InputTxt'
 import icons from '../../assets/icons'
 import Button from '../../components/Button';
 import "../../styles/homepage/Register.css"
+import { NavLink } from 'react-router-dom';
 
 
-function Register() {
+function Login() {
     const [userData, setUserData] = useState({});
 
     const [userActions, setUserActions] = useState({
@@ -88,37 +90,14 @@ function Register() {
             <div className="registerInner">
                 <InputTxt actions={
                     {
-                        svg: icons.general.work,
-                        label: "user name",
+                        svg: icons.general.mail,
+                        label: "username/email",
                         placeholder: "naveen_02",
                         type: "text",
                         setValue: setUserData,
                         name: "username", 
                     }
                 }  />
-                <div className="userEmailContainer">
-                    <InputTxt actions={
-                        {
-                            svg: icons.general.mail,
-                            label: "Gmail",
-                            placeholder: "naveenjangit9@gmail.com",
-                            type: "email",
-                            setValue: setUserData,
-                            name: "email"
-                        }
-                    } />
-                    <div className="userEmail">
-                        <Button label="Verify Mail"
-                            containsSvg={false}
-                            styleName={"dashedBtn"}
-                            clickHandler={verifyEmailBtnClick} />
-                        {userActions.verifyEmailBtnClick && (
-
-                            <input type="text" className={`${userActions.emailVerified ? "succeed": "danger"}`} onChange={(e) => emailOtpInputHanlder(e)} placeholder='Otp' />
-                        )}
-                    </div>
-                </div>
-
                 <div className="passwordContainer">
                     <InputTxt actions={
                         {
@@ -131,29 +110,9 @@ function Register() {
                             toRight: true
                         }
                     } svgClickHandler={passwordHideShow} />
-                </div>
-                <div className="phoneNumberContainer">
-                     <InputTxt actions={
-                        {
-                            svg: icons.user.contact,
-                            label: "Phone Number",
-                            placeholder: "+91-9110346500",
-                            type: "email",
-                            setValue: setUserData,
-                            name: "phone"
-                        }
-                    } />
-                    <div className="userEmail">
-                        <Button label="Verify Phone"
-                            containsSvg={false}
-                            styleName={"dashedBtn"}
-                            clickHandler={verifyPhoneNumberBtnClick}/>
-                        {userActions.verifyPhoneNumberBtnClick && (
-                            <input type="text" className={`${userActions.phoneVerified ? "succeed": "danger"}`} onChange={(e) => phoneOtpInputHandler(e)} placeholder='Otp' />
-                        )}
-                    </div>
-                </div>
+                    <NavLink to="/profile/forgotpassword"> Forgot Password</NavLink>
 
+                </div>
                 <div className={userActions.emailVerified && userActions.phoneVerified ? "registerButton" : "failRegisterButton"}>
                      <Button label="Register"
                             containsSvg={false}
@@ -166,4 +125,4 @@ function Register() {
     )
 }
 
-export default Register
+export default Login

@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import InputTxt from '../../components/InputTxt'
 import icons from '../../assets/icons'
 import Button from '../../components/Button';
 import "../../styles/homepage/Register.css"
 
-
-function Register() {
+function ForgotPassword() {
     const [userData, setUserData] = useState({});
 
     const [userActions, setUserActions] = useState({
@@ -86,20 +85,10 @@ function Register() {
     return (
         <div className='registerWrapper'>
             <div className="registerInner">
-                <InputTxt actions={
-                    {
-                        svg: icons.general.work,
-                        label: "user name",
-                        placeholder: "naveen_02",
-                        type: "text",
-                        setValue: setUserData,
-                        name: "username", 
-                    }
-                }  />
                 <div className="userEmailContainer">
                     <InputTxt actions={
                         {
-                            svg: icons.general.mail,
+                            svg: icons.general.work,
                             label: "Gmail",
                             placeholder: "naveenjangit9@gmail.com",
                             type: "email",
@@ -114,7 +103,7 @@ function Register() {
                             clickHandler={verifyEmailBtnClick} />
                         {userActions.verifyEmailBtnClick && (
 
-                            <input type="text" className={`${userActions.emailVerified ? "succeed": "danger"}`} onChange={(e) => emailOtpInputHanlder(e)} placeholder='Otp' />
+                            <input type="text" className={`${userActions.emailVerified ? "succeed": "danger"}`} onChange={(e) => emailOtpInputHanlder(e)} />
                         )}
                     </div>
                 </div>
@@ -132,27 +121,6 @@ function Register() {
                         }
                     } svgClickHandler={passwordHideShow} />
                 </div>
-                <div className="phoneNumberContainer">
-                     <InputTxt actions={
-                        {
-                            svg: icons.user.contact,
-                            label: "Phone Number",
-                            placeholder: "+91-9110346500",
-                            type: "email",
-                            setValue: setUserData,
-                            name: "phone"
-                        }
-                    } />
-                    <div className="userEmail">
-                        <Button label="Verify Phone"
-                            containsSvg={false}
-                            styleName={"dashedBtn"}
-                            clickHandler={verifyPhoneNumberBtnClick}/>
-                        {userActions.verifyPhoneNumberBtnClick && (
-                            <input type="text" className={`${userActions.phoneVerified ? "succeed": "danger"}`} onChange={(e) => phoneOtpInputHandler(e)} placeholder='Otp' />
-                        )}
-                    </div>
-                </div>
 
                 <div className={userActions.emailVerified && userActions.phoneVerified ? "registerButton" : "failRegisterButton"}>
                      <Button label="Register"
@@ -166,4 +134,4 @@ function Register() {
     )
 }
 
-export default Register
+export default ForgotPassword
