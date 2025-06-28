@@ -5,15 +5,13 @@ import Button from '../../components/Button';
 import "../../styles/homepage/Register.css"
 
 function ForgotPassword() {
-    const [userData, setUserData] = useState({});
 
     const [userActions, setUserActions] = useState({
         verifyEmailBtnClick: false,
         emailVerified: false,
-        phoneVerified: false,
-        phoneVerifiedBtnClick: false,
         showPassword:false
     })
+    const [updatePassword, setUpdatePassword] = useState({})
 
     //verify email handler before adding user to db;
     const verifyEmailBtnClick = () => {
@@ -21,16 +19,6 @@ function ForgotPassword() {
             {
                 ...prev,
                 verifyEmailBtnClick:true
-            }
-        ))
-    }
-
-
-    const verifyPhoneNumberBtnClick = () => {
-        setUserActions(prev => (
-            {
-                ...prev,
-                verifyPhoneNumberBtnClick : true
             }
         ))
     }
@@ -60,25 +48,8 @@ function ForgotPassword() {
         }
     }
 
-    const phoneOtpInputHandler = (e) => {
-        let txt = String(e.target.value)
-        if(txt == dummy){
-            setUserActions(prev => (
-                {
-                    ...prev,
-                    phoneVerified:true
-                }
-            ))
-        }else{
-            setUserActions(prev => ({
-                ...prev, 
-                phoneVerified:false
-            }))
-        }
-    }
-
     ///send to backend
-    const registerUserHandler = () => {
+    const updatePasswordHandler = () => {
 
     }
 
@@ -88,11 +59,11 @@ function ForgotPassword() {
                 <div className="userEmailContainer">
                     <InputTxt actions={
                         {
-                            svg: icons.general.work,
+                            svg: icons.general.mail,
                             label: "Gmail",
                             placeholder: "naveenjangit9@gmail.com",
                             type: "email",
-                            setValue: setUserData,
+                            setValue: setUpdatePassword,
                             name: "email"
                         }
                     } />
@@ -112,20 +83,21 @@ function ForgotPassword() {
                     <InputTxt actions={
                         {
                             svg: userActions.showPassword ? icons.general.eyeOpened: icons.general.eyeClosed,
-                            label: "password",
+                            label: "New Password",
                             placeholder: "-------",
                             type: userActions.showPassword ? "text" : "password",
-                            setValue: setUserData,
+                            setValue: setUpdatePassword,
                             name: "password",
                             toRight: true
                         }
                     } svgClickHandler={passwordHideShow} />
+
                 </div>
 
                 <div className={userActions.emailVerified && userActions.phoneVerified ? "registerButton" : "failRegisterButton"}>
-                     <Button label="Register"
+                     <Button label="Update Password"
                             containsSvg={false}
-                            clickHandler={registerUserHandler} />
+                            clickHandler={updatePasswordHandler} />
                 </div>
 
 
